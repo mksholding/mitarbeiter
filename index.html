@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>MKS – Sicherheitsmitarbeiter (m/w/d) im ÖPNV</title>
+    <style>
+      /* Brand + scope: all styles live under .mks-ad to avoid collisions when embedded */
+      .mks-ad {
+        --mks-brand: #E31837;           /* Primär Rot */
+        --mks-brand-600: #c6132f;       /* dunkler */
+        --mks-ink: #0f0f14;             /* Text */
+        --mks-muted: #5b5b66;           /* Sekundärtext */
+        --mks-surface: #ffffff;         /* Kartenhintergrund */
+        --mks-line: #e7e7ec;            /* Linien */
+        --mks-bg: #fafafb;              /* Seitenhintergrund */
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+        color: var(--mks-ink);
+        line-height: 1.6;
+        background: var(--mks-bg);
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+      .mks-ad * { box-sizing: border-box; }
+      .mks-wrap {
+        padding: 12px;
+      }
+      @media (min-width: 480px) {
+        .mks-wrap {
+          padding: 16px;
+        }
+      }
+      @media (min-width: 760px) {
+        .mks-wrap {
+          padding: 20px;
+        }
+      }
+
+      /* Header */
+      .mks-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 12px 0 8px;
+      }
+      .mks-logo {
+        height: 44px;
+        width: auto;
+        display: block;
+      }
+
+      /* Hero */
+      .mks-hero {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background: url('auto_MKS.jpeg') center/cover no-repeat;
+        min-height: 360px;
+        display: grid;
+        align-items: end;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      }
+      /* Ensure enough image is visible on very small screens */
+      @media (max-width: 479.98px) {
+        .mks-hero { min-height: 680px; }
+        .mks-hero__content { padding: 16px; }
+        .mks-title { font-size: clamp(20px, 5.2vw, 28px); }
+        .mks-sub { font-size: 13px; }
+        .mks-location-badge { font-size: 13px; padding: 5px 10px; }
+      }
+      @media (min-width: 480px) {
+        .mks-hero {
+          min-height: 420px;
+        }
+      }
+      @media (min-width: 760px) {
+        .mks-hero {
+          min-height: 500px;
+        }
+      }
+      .mks-hero__content {
+        position: relative;
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(30px) saturate(200%);
+        -webkit-backdrop-filter: blur(30px) saturate(200%);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-top: none;
+        padding: 20px;
+        z-index: 1;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+      }
+      @media (min-width: 480px) {
+        .mks-hero__content {
+          padding: 24px;
+        }
+      }
+      @media (min-width: 760px) {
+        .mks-hero__content {
+          padding: 28px;
+        }
+      }
+      .mks-eyebrow {
+        display: inline-block;
+        background: var(--mks-brand);
+        color: #fff;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .mks-title {
+        margin: 6px 0 10px;
+        line-height: 1.25;
+        font-weight: 800;
+        font-size: clamp(22px, 3.2vw, 34px);
+      }
+      .mks-sub {
+        margin: 0 0 14px;
+        color: var(--mks-muted);
+        font-size: 14px;
+      }
+      .mks-location-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--mks-brand);
+        color: #fff;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 14px;
+        margin: 0 4px;
+        box-shadow: 0 4px 12px rgba(227,24,55,0.3);
+        transform: translateY(-1px);
+        vertical-align: middle;
+      }
+      .mks-location-badge::before {
+        content: "📍";
+        font-size: 16px;
+        line-height: 1;
+      }
+      .mks-location-text {
+        display: inline;
+      }
+      .mks-cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      /* Buttons */
+      .mks-btn {
+        appearance: none;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-weight: 700;
+        border-radius: 12px;
+        padding: 12px 18px;
+        transition: transform .05s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+        white-space: nowrap;
+      }
+      .mks-btn:active { transform: translateY(1px); }
+      .mks-btn--primary {
+        background: var(--mks-brand);
+        color: #fff;
+        box-shadow: 0 6px 16px rgba(227,24,55,0.25);
+      }
+      .mks-btn--primary:hover { background: var(--mks-brand-600); }
+      .mks-btn--ghost {
+        background: #fff;
+        color: var(--mks-brand);
+        border: 2px solid var(--mks-brand);
+      }
+      .mks-btn--ghost:hover {
+        background: rgba(227,24,55,0.06);
+      }
+
+      /* Cards + sections */
+      .mks-section { margin-top: 28px; }
+      .mks-card {
+        background: var(--mks-surface);
+        border: 1px solid var(--mks-line);
+        border-radius: 16px;
+        padding: 22px;
+        box-shadow: 0 6px 24px rgba(0,0,0,0.04);
+      }
+      .mks-h2 {
+        margin: 0 0 14px;
+        font-size: clamp(18px, 2.5vw, 24px);
+        line-height: 1.3;
+      }
+      .mks-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      @media (min-width: 880px) {
+        .mks-grid { grid-template-columns: 1fr 1fr; }
+      }
+      .mks-list {
+        margin: 0;
+        padding-left: 18px;
+      }
+      .mks-list li { margin: 6px 0; }
+
+      /* Benefits – CSS-only Tabs (Radio) */
+      .mks-benefits { position: relative; }
+      .mks-benefits input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+      .mks-tabbar {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+      @media (max-width: 640px) {
+        .mks-tabbar {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 360px) {
+        .mks-tabbar {
+          grid-template-columns: 1fr;
+        }
+      }
+      .mks-tab {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        padding: 12px 10px;
+        border-radius: 12px;
+        border: 1px solid var(--mks-line);
+        background: #fff;
+        color: var(--mks-ink);
+        font-weight: 700;
+        cursor: pointer;
+        transition: background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+        min-height: 44px;
+        min-width: 0;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+      }
+      .mks-tab::before {
+        content: attr(data-emoji);
+        font-size: 16px;
+        line-height: 1;
+      }
+      .mks-panels > .mks-panel { display: none; }
+      .mks-panel {
+        background: #fff;
+        border: 1px solid var(--mks-line);
+        border-radius: 12px;
+        padding: 16px;
+      }
+      /* Active styles via :checked sibling selectors */
+      #mks-b1:checked ~ .mks-tabbar label[for="mks-b1"],
+      #mks-b2:checked ~ .mks-tabbar label[for="mks-b2"],
+      #mks-b3:checked ~ .mks-tabbar label[for="mks-b3"],
+      #mks-b4:checked ~ .mks-tabbar label[for="mks-b4"],
+      #mks-b5:checked ~ .mks-tabbar label[for="mks-b5"] {
+        background: var(--mks-brand);
+        color: #fff;
+        border-color: var(--mks-brand);
+        box-shadow: 0 6px 16px rgba(227,24,55,0.25);
+      }
+      #mks-b1:checked ~ .mks-panels .p1 { display: block; }
+      #mks-b2:checked ~ .mks-panels .p2 { display: block; }
+      #mks-b3:checked ~ .mks-panels .p3 { display: block; }
+      #mks-b4:checked ~ .mks-panels .p4 { display: block; }
+      #mks-b5:checked ~ .mks-panels .p5 { display: block; }
+
+      /* Contact */
+      .mks-contact {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      @media (min-width: 760px) {
+        .mks-contact { grid-template-columns: 2fr 1fr; }
+      }
+      .mks-qr-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      @media (min-width: 760px) {
+        .mks-qr-grid {
+          flex-direction: row;
+          align-items: stretch;
+        }
+      }
+      .mks-qr {
+        background: #fff;
+        border-radius: 16px;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .mks-qr--primary {
+        flex: 1;
+        border: 2px solid var(--mks-brand);
+        background: linear-gradient(135deg, rgba(227,24,55,0.05), rgba(255,255,255,1));
+        box-shadow: 0 8px 24px rgba(227,24,55,0.15);
+        min-height: 0;
+      }
+      .mks-qr--secondary {
+        flex: 1;
+        border: 2px solid var(--mks-line);
+        padding: 20px;
+        min-height: 0;
+      }
+      .mks-qr img {
+        display: block;
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        border-radius: 8px;
+      }
+      .mks-qr--primary img {
+        max-width: 240px;
+        border: 3px solid var(--mks-brand);
+        box-shadow: 0 4px 12px rgba(227,24,55,0.2);
+      }
+      .mks-qr--secondary img {
+        max-width: 240px;
+      }
+      .mks-qr-label {
+        font-weight: 700;
+        font-size: 15px;
+        color: var(--mks-ink);
+        margin-top: 4px;
+      }
+      .mks-qr--primary .mks-qr-label {
+        color: var(--mks-brand);
+        font-size: 16px;
+      }
+      .mks-qr--secondary .mks-qr-label {
+        font-size: 16px;
+      }
+      .mks-qr small {
+        color: var(--mks-muted);
+        font-size: 12px;
+        margin-top: -4px;
+      }
+      .mks-qr-icon {
+        font-size: 24px;
+        margin-bottom: 4px;
+      }
+      .mks-qr--primary .mks-qr-icon {
+        font-size: 32px;
+      }
+      .mks-qr--secondary .mks-qr-icon {
+        font-size: 32px;
+      }
+
+      /* Footer */
+      .mks-footer {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin: 18px 0 8px;
+        color: var(--mks-muted);
+        font-size: 14px;
+      }
+      @media (min-width: 760px) {
+        .mks-footer { grid-template-columns: 1fr 1fr; }
+      }
+      .mks-footimg {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      .mks-footimg img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        border: 1px solid var(--mks-line);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .mks-footimg img:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mks-ad">
+      <div class="mks-wrap">
+        <header class="mks-header">
+          <img src="mks_logo.png" alt="MKS Logo" class="mks-logo">
+        </header>
+
+        <section class="mks-hero mks-section">
+          <div class="mks-hero__content">
+            <span class="mks-eyebrow">Wir stellen ein</span>
+            <h1 class="mks-title">Sicherheitsmitarbeiter (m/w/d) im öffentlichen Nahverkehr – mit Sachkundenachweis nach § 34a GewO</h1>
+            <p class="mks-sub">Standort: <span class="mks-location-badge">Großraum Stuttgart</span> · Arbeitgeber: MKS Holding &amp; Verwaltung GmbH · übertarifliche Bezahlung + Objektzulagen</p>
+            <div class="mks-cta-row">
+              <a class="mks-btn mks-btn--primary" href="tel:+494024437885">Jetzt anrufen: +49 40 244 37885</a>
+              <a class="mks-btn mks-btn--ghost" href="mailto:bewerbung@mks-holding.de?subject=Bewerbung%20Sicherheitsmitarbeiter%20%C3%96PNV&amp;body=Guten%20Tag%2C%0Aich%20interessiere%20mich%20f%C3%BCr%20die%20Stelle%20als%20Sicherheitsmitarbeiter%20im%20%C3%96PNV.%20Anbei%20meine%20Kontaktdaten%20und%20Unterlagen.%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen%2C">Per E‑Mail bewerben</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="mks-section">
+          <div class="mks-grid">
+            <div class="mks-card">
+              <h2 class="mks-h2">Ihre Aufgabe – Sicherheit, Service und Verantwortung</h2>
+              <ul class="mks-list">
+                <li>Durchführung von Streifengängen in Bahnhöfen, Haltestellen und Zügen</li>
+                <li>Deeskalation und Kommunikation mit Fahrgästen und Personal</li>
+                <li>Kontrolle von Zugangsbereichen und Objektschutz im ÖPNV</li>
+                <li>Zusammenarbeit mit Polizei und Verkehrsbetrieben</li>
+                <li>Dokumentation von Vorkommnissen im Einsatzbericht</li>
+              </ul>
+            </div>
+            <div class="mks-card">
+              <h2 class="mks-h2">Ihr Profil – das bringen Sie mit</h2>
+              <ul class="mks-list">
+                <li>Sachkundenachweis gemäß § 34a GewO</li>
+                <li>Erfahrung im Sicherheitsdienst, idealerweise im Bereich ÖPNV oder Veranstaltungsschutz</li>
+                <li>Freundliches, sicheres Auftreten und Kommunikationsstärke</li>
+                <li>Bereitschaft zu Schicht- und Wochenenddienst</li>
+                <li>Körperliche Fitness und Teamgeist</li>
+                <li>Deutschkenntnisse in Wort und Schrift</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="mks-section mks-card mks-benefits">
+          <h2 class="mks-h2">Unser Angebot</h2>
+          <!-- CSS-only Tabs -->
+          <input type="radio" name="mks-benefit" id="mks-b1" checked>
+          <input type="radio" name="mks-benefit" id="mks-b2">
+          <input type="radio" name="mks-benefit" id="mks-b3">
+          <input type="radio" name="mks-benefit" id="mks-b4">
+          <input type="radio" name="mks-benefit" id="mks-b5">
+
+          <div class="mks-tabbar">
+            <label class="mks-tab" for="mks-b1" data-emoji="💶">Vergütung</label>
+            <label class="mks-tab" for="mks-b2" data-emoji="🛡️">Sicherheit</label>
+            <label class="mks-tab" for="mks-b3" data-emoji="📈">Entwicklung</label>
+            <label class="mks-tab" for="mks-b4" data-emoji="👥">Team</label>
+            <label class="mks-tab" for="mks-b5" data-emoji="🧰">Ausstattung</label>
+          </div>
+
+          <div class="mks-panels">
+            <div class="mks-panel p1">
+              <ul class="mks-list">
+                <li>Übertarifliche Vergütung + zahlreiche Zulagen</li>
+                <li>Langfristige Verträge mit Übernahmeoption</li>
+                <li>Transparente Schichtzuschläge</li>
+              </ul>
+            </div>
+            <div class="mks-panel p2">
+              <ul class="mks-list">
+                <li>Langfristige, sichere Beschäftigung in einem wachsenden Unternehmen</li>
+                <li>Klare Prozesse und starke Einsatzleitung</li>
+                <li>Planbare Dienstpläne</li>
+              </ul>
+            </div>
+            <div class="mks-panel p3">
+              <ul class="mks-list">
+                <li>Kostenübernahme bei Fortbildungen und Schulungen</li>
+                <li>Aufstiegschancen zum Teamleiter oder Objektleiter</li>
+                <li>Regelmäßige Trainings zu Deeskalation und Service</li>
+              </ul>
+            </div>
+            <div class="mks-panel p4">
+              <ul class="mks-list">
+                <li>Kollegiales, respektvolles Arbeitsumfeld</li>
+                <li>Starke Teamkultur, faires Miteinander</li>
+                <li>Wertschätzende Führung</li>
+              </ul>
+            </div>
+            <div class="mks-panel p5">
+              <ul class="mks-list">
+                <li>Dienstkleidung und modernste Ausrüstung</li>
+                <li>Fahrzeuge und Einsatzmittel auf dem neuesten Stand</li>
+                <li>Bereitstellung aller notwendigen Tools für den Einsatz</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="mks-section">
+          <div class="mks-contact">
+            <div class="mks-card">
+              <h2 class="mks-h2">Bewerbung &amp; Kontakt</h2>
+              <p>Am schnellsten erreichst du uns telefonisch – wir freuen uns auf das Gespräch!</p>
+              <div class="mks-cta-row" style="margin: 12px 0 6px;">
+                <a class="mks-btn mks-btn--primary" href="tel:+494024437885">Jetzt anrufen: +49 40 244 37885</a>
+                <a class="mks-btn mks-btn--ghost" href="mailto:bewerbung@mks-holding.de?subject=Bewerbung%20Sicherheitsmitarbeiter%20%C3%96PNV">E‑Mail senden</a>
+              </div>
+              <p style="margin-top: 8px; color: var(--mks-muted); font-size: 14px;">Alternativ kannst du uns deine Unterlagen an <strong>bewerbung@mks-holding.de</strong> schicken.</p>
+            </div>
+            <div class="mks-qr-grid">
+              <div class="mks-qr mks-qr--primary">
+                <div class="mks-qr-icon">📞</div>
+                <div class="mks-qr-label">Jetzt anrufen</div>
+                <img src="tel_qr_MKS.png" alt="QR-Code: Telefon +49 40 244 37885">
+                <small>Scannen zum Anrufen</small>
+              </div>
+              <div class="mks-qr mks-qr--secondary">
+                <div class="mks-qr-icon">✉️</div>
+                <div class="mks-qr-label">Per E‑Mail</div>
+                <img src="mail_qr_MKS.png" alt="QR-Code: E‑Mail bewerbung@mks-holding.de">
+                <small>Scannen für E‑Mail</small>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="mks-footer">
+          <div class="mks-card">
+            <strong>MKS Holding &amp; Verwaltung GmbH</strong><br>
+            Einsatzgebiet: <span class="mks-location-badge">Großraum Stuttgart</span><br>
+            Wir sichern Bahnhöfe, Buslinien und Veranstaltungen im öffentlichen Raum – zuverlässig und serviceorientiert.
+          </div>
+          <div class="mks-footimg">
+            <img src="MKS_person.jpeg" alt="MKS Mitarbeiter im Einsatz">
+            <img src="MKS_person2.jpeg" alt="MKS Mitarbeiter am Arbeitsplatz">
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
+
+
